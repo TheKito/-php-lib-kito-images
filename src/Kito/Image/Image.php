@@ -2,7 +2,7 @@
 
 namespace Kito\Image;
 
-use \Imagick;
+use Imagick;
 
 class Image
 {

@@ -2,8 +2,8 @@
 
 namespace Kito\Image;
 
-use \Imagick;
-use \ImagickPixel;
+use Imagick;
+use ImagickPixel;
 
 class ImageFactory
 {
