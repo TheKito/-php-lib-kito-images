@@ -32,4 +32,17 @@ class Image
         $_ = clone  $this->image;
         return new Image($_->fxImage('intensity'));
     }
+    public function solidBackground(string $color = 'transparent'): Image
+    {
+        $_ = ImageFactory::create($this->image->getImageWidth(), $this->image->getImageHeight(), $color);
+         
+        $_->image->compositeImage (
+            $this->image,
+            Imagick::COMPOSITE_DISSOLVE,
+            0,
+            0
+        );
+        
+        return $_;
+    }
 }
