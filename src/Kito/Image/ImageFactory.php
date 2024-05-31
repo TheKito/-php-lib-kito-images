@@ -7,7 +7,6 @@ use \ImagickPixel;
 
 class ImageFactory
 {
-
     public static function create(int $imageWidth, int $imageHeight, string $bgColor = 'transparent', string $format = 'png'): Image
     {
         $_ = new Imagick();
@@ -15,5 +14,5 @@ class ImageFactory
         $_->setImageFormat($format);
         return new Image($_);
     }
-    
+
 }
