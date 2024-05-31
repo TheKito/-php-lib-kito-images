@@ -15,4 +15,9 @@ class ImageFactory
         return new Image($_);
     }
 
+    public function fromFile(string $path): Image
+    {
+        return new Image(new \Imagick($path));
+    }
+
 }
