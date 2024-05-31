@@ -42,7 +42,23 @@ class Image
             0,
             0
         );
+
+        return $_;
+    }
+    public function safeArea(): Image
+    {
+        $imageWidth = $this->image->getImageWidth();
+        $imageHeight =  $this->image->getImageHeight();
+
+        $_ = ImageFactory::create($imageWidth / 7 * 10, $imageHeight / 7 * 10);
         
+        $_->image->compositeImage(
+            $this->image,
+            Imagick::COMPOSITE_DISSOLVE,
+            ($_->image->getImageWidth() -  $this->image->getImageWidth()) / 2,
+            ($_->image->getImageHeight() - $this->image->getImageHeight()) / 2
+        );
+
         return $_;
     }
 }
