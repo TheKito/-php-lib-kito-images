@@ -35,8 +35,8 @@ class Image
     public function solidBackground(string $color = 'transparent'): Image
     {
         $_ = ImageFactory::create($this->image->getImageWidth(), $this->image->getImageHeight(), $color);
-         
-        $_->image->compositeImage (
+
+        $_->image->compositeImage(
             $this->image,
             Imagick::COMPOSITE_DISSOLVE,
             0,
