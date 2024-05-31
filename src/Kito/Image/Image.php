@@ -27,4 +27,9 @@ class Image
         $_->scaleImage($width, $height);
         return new Image($_);
     }
+    public function monochrome(): Image
+    {
+        $_ = clone  $this->image;
+        return new Image($_->fxImage('intensity'));
+    }
 }
