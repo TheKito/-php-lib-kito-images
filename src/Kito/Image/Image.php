@@ -61,4 +61,28 @@ class Image
 
         return $_;
     }
+    public function square(): Image
+    {
+        $imageWidth =  $this->image->getImageWidth();
+        $imageHeight =  $this->image->getImageHeight();
+        $imageWH = $imageWidth;
+        $imageDiff = abs($imageWidth - $imageHeight);
+
+        if ($imageHeight > $imageWH) {
+            $imageWH = $imageHeight;
+        }
+
+        $imageWH = $imageWH + $imageDiff / 2;
+
+        $_ = ImageFactory::create($imageWH, $imageWH);
+        $_->image->compositeImage(
+            $this->image,
+            Imagick::COMPOSITE_DISSOLVE,
+            ($_->image->getImageWidth() -  $this->image->getImageWidth()) / 2,
+            ($_->image->getImageHeight() -  $this->image->getImageHeight()) / 2
+        );
+
+        return $_;
+    }
+
 }
