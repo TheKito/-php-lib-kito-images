@@ -14,4 +14,11 @@ class Image
     }
 
 
+    public function trim(): Image
+    {
+        $_ = clone $this->image;
+        $_->trimImage(0);
+        return new Image($_);
+    }
+
 }
