@@ -1,0 +1,14 @@
+{
+    "name": "kito/php-lib-kito-image",
+    "type": "library",
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.58",
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kito\\Image\\": "src/Kito/Image"
+        }
+    },
+    "require": {}
+}
