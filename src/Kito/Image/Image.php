@@ -51,7 +51,7 @@ class Image
         $imageHeight =  $this->image->getImageHeight();
 
         $_ = ImageFactory::create($imageWidth / 7 * 10, $imageHeight / 7 * 10);
-        
+
         $_->image->compositeImage(
             $this->image,
             Imagick::COMPOSITE_DISSOLVE,
