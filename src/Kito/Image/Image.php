@@ -21,4 +21,10 @@ class Image
         return new Image($_);
     }
 
+    public function scale(int $width, int $height): Image
+    {
+        $_ = clone  $this->image;
+        $_->scaleImage($width, $height);
+        return new Image($_);
+    }
 }
